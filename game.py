@@ -1,5 +1,6 @@
 import pygame
 import os
+import time
 class Game():
     def __init__(self, board, screen_size):
         self.board = board
@@ -9,6 +10,7 @@ class Game():
     
     def run(self):
         pygame.init()
+        quit_next = False
         self.screen = pygame.display.set_mode(self.screen_size)
         running = True
         while running:
@@ -21,6 +23,16 @@ class Game():
                     self.handleClick(position,rightClick)
             pygame.display.flip()
             self.draw()
+            if self.board.lost == True:
+                pygame.display.flip()
+                self.draw()
+                time.sleep(2)
+                running = False
+            if self.board.won == True:
+                pygame.display.flip()
+                self.draw()
+                time.sleep(2)
+                running = False
         pygame.quit()
 
     def draw(self):
