@@ -14,3 +14,9 @@ class Tile():
     def addNeighbors(self, neighbors):
         self.neighbors = neighbors
         self.setNumBombs()
+
+    def setClickedTrue(self):
+        self.clicked = True
+    
+    def toggleFlagged(self):
+        self.flagged = not self.flagged

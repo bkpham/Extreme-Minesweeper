@@ -36,6 +36,16 @@ class Board():
     
     def getTile(self, row, col):
         return self.board[row][col]
+    
+    def doClick(self, index, rightClick):
+        row = index[0]
+        col = index[1]
+        tile = self.board[row][col]
+        if(rightClick):
+            tile.toggleFlagged()
+        else:
+            tile.setClickedTrue()
+        
 
 
 
