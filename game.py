@@ -19,12 +19,13 @@ class Game():
             self.draw()
         pygame.quit()
 
-
     def draw(self):
         position = (0,0)
         for row in range(self.board.getSize()[0]):
             for col in range(self.board.getSize()[1]):
-                image = self.images["empty_block.png"]
+                tile = self.board.getTile(row,col)
+                image = self.getImage(tile)
+                #image = self.images["empty_block.png"]
                 self.screen.blit(image, position)
                 position = position[0] + self.block_size[0], position[1]
             position = 0, position[1] + self.block_size[1]
@@ -37,3 +38,11 @@ class Game():
             image = pygame.image.load(os.path.join("images",filename))
             image = pygame.transform.scale(image, self.block_size)
             self.images[filename] = image
+    
+    def getImage(self,tile):
+        if tile.clicked:
+            pass
+        else:
+            image = self.images["empty_block.png"]
+        return image
+        
