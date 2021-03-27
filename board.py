@@ -1,6 +1,6 @@
 from random import random
 from tile import Tile
-PROBABILITY = 0.2
+PROBABILITY = 0.7
 
 class Board():
     def __init__(self, size):

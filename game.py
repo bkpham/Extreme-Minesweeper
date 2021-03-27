@@ -25,11 +25,26 @@ class Game():
             if self.board.lost == True:
                 pygame.display.flip()
                 self.draw()
+                pygame.mixer.music.load("boom.wav")
+                pygame.mixer.music.play()
+                time.sleep(1.2)
+                pygame.mixer.music.stop()
+                pygame.mixer.music.unload
                 time.sleep(2)
                 running = False
             if self.board.won == True:
                 pygame.display.flip()
                 self.draw()
+                win = pygame.display.set_mode((500, 500))
+                font = pygame.font.SysFont("comicsans", 30, True)
+                text = font.render("Congratulations! You Won!", True, (255,255,255))
+                win.blit(text, (70,240))
+                pygame.mixer.music.load("victory.wav")
+                pygame.mixer.music.play()
+                pygame.display.flip()
+                time.sleep(1.2)
+                pygame.mixer.music.stop()
+                pygame.mixer.music.unload
                 time.sleep(2)
                 running = False
         pygame.quit()
