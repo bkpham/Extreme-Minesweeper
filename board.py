@@ -55,9 +55,9 @@ class Board():
         else:
             tile.setClickedTrue()
             self.num_clicked += 1
-            if(tile.numBombs == 0): #recursively click
+            if(tile.numBombs == 0 and not tile.contains_bomb): #recursively click
                 self.recursivelyClick(index)
-            print(self.size[0]*self.size[1], self.num_clicked,self.num_bombs)
+            #print(self.size[0]*self.size[1], self.num_clicked,self.num_bombs)
             if self.num_clicked >= (self.size[0] * self.size[1]) - self.num_bombs:
                 self.won = True
             if tile.contains_bomb:

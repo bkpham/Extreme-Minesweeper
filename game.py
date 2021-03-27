@@ -10,7 +10,6 @@ class Game():
     
     def run(self):
         pygame.init()
-        quit_next = False
         self.screen = pygame.display.set_mode(self.screen_size)
         running = True
         while running:
