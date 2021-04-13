@@ -2,6 +2,7 @@ from game import Game
 from board import Board
 import pygame
 print("Choose a difficulty: Easy, Medium, or Hard")
+print("test")
 while(True):
     print("Press e for Easy, m for Medium, h for Hard")
     difficulty = input()
