@@ -1,1 +1,1 @@
-# Extreme-Minesweeper
+# Minesweeper
